@@ -6,7 +6,7 @@
 
 
 
-# MY MySQL query statement below
+# MySQL query statement below
 
 Solutions for [SQL 50 Study Plan](https://leetcode.com/studyplan/top-sql-50/) on LeetCode
 
