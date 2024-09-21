@@ -1,0 +1,10 @@
+#Github- https://github.com/Code-by-Ashish-Thakur
+#Leetcode- https://leetcode.com/Ashish_49
+#Codeforces- https://codeforces.com/profile/oder_1
+#Codechef- https://www.codechef.com/users/oder_1
+
+# MY MySQL query statement below
+
+
+
+SELECT user_id, CONCAT(UPPER(SUBSTRING(name,1,1)), LOWER(SUBSTRING(name,2, LENGTH(name)))) AS name FROM Users ORDER BY user_id 
