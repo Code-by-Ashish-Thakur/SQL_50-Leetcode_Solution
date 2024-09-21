@@ -6,7 +6,7 @@
 
 
 
-# MySQL query statement below
+# MY MySQL query statement below
 
 Solutions for [SQL 50 Study Plan](https://leetcode.com/studyplan/top-sql-50/) on LeetCode
 
@@ -148,7 +148,8 @@ GROUP BY s.user_id;
 
 [620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies)
 ```sql
--- odd id, "boring", rating desc
+
+
 SELECT *
 FROM Cinema
 WHERE id % 2 <> 0 
@@ -158,7 +159,8 @@ ORDER BY rating DESC
 
 [1251. Average Selling Price](https://leetcode.com/problems/average-selling-price/)
 ```sql
--- avg(selling), round 2
+
+
 SELECT p.product_id, 
   ROUND(SUM(price * units) / SUM(units), 2) AS average_price
 FROM Prices p
@@ -170,7 +172,8 @@ GROUP BY p.product_id
 
 [1075. Project Employees I](https://leetcode.com/problems/project-employees-i)
 ```sql
--- avg(exp_yr), round 2, by project
+
+
 SELECT project_id, ROUND(AVG(experience_years), 2) average_years
 FROM Project p 
 LEFT JOIN Employee e
@@ -180,7 +183,8 @@ GROUP BY project_id
 
 [1633. Percentage of Users Attended a Contest](https://leetcode.com/problems/percentage-of-users-attended-a-contest)
 ```sql
--- % desc, contest_id asc, round 2
+
+
 SELECT r.contest_id,
        ROUND(COUNT(DISTINCT r.user_id) * 100 / (SELECT COUNT(DISTINCT user_id) FROM Users), 2) AS percentage
 FROM Register r
@@ -191,7 +195,8 @@ ORDER BY percentage DESC, r.contest_id ASC;
 [1211 Queries Quality and Percentage](https://leetcode.com/problems/queries-quality-and-percentage)
 
 ```sql
---quality - avg(rating/position), poor query % - %(rating < 3), round 2
+
+
 SELECT query_name, 
     ROUND(AVG(rating/position), 2) AS quality, 
     ROUND(SUM(IF(rating < 3, 1, 0)) * 100/ COUNT(rating), 2) AS poor_query_percentage
@@ -210,7 +215,8 @@ GROUP BY query_name
 
 [1193. Monthly Transactions I](https://leetcode.com/problems/monthly-transactions-i/)
 ```sql
--- month, country, count(trans), total(amt), count(approved_trans), total(amt)
+
+
 SELECT DATE_FORMAT(trans_date, '%Y-%m') month, country, 
         COUNT(state) trans_count, 
         SUM(IF(state = 'approved', 1, 0)) approved_count, 
